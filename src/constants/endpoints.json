@@ -1,0 +1,9 @@
+{
+  "repositories":{
+    "get": "",
+    "list": "https://api.github.com/orgs/decathlon/repos"
+  },
+  "users":{
+    "get":"https://api.github.com/users/decathlon"
+  }
+}

@@ -1,0 +1,14 @@
+.dec-avatar{
+  border-radius: 50%;
+}
+
+.dec-user-grid{
+  display:grid;
+  grid-template-columns: 200px auto;
+}
+
+.dec-link-grid{
+  display:grid;
+  row-gap: 5px;
+  grid-template-rows: 3;
+}
