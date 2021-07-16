@@ -3,4 +3,5 @@
     grid-template-columns: 1fr 1fr;
     margin-bottom:15px;
     column-gap:10px;
+    max-width: 50%;
 }

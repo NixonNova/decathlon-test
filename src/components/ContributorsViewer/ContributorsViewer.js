@@ -12,7 +12,7 @@ function ContributorsViewer(props) {
             setContributors(response.data)
         }
         )
-    }, [])
+    }, [props.contributorsUrl])
 
     return (
         <div title={contributors.length + ' Contributor(s)'}>

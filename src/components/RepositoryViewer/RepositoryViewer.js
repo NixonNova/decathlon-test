@@ -43,31 +43,37 @@ function RepositoryViewer() {
             <Toolbar onFilterCriteriaChanged={(e) => { onFilterCriteriaChanged(e) }}
                 onSortCriteriaChanged={(e) => { onSortCriteriaChanged(e) }}
             ></Toolbar>
-            <div>
-                <div><span className={'fs-5 ' + (repos.length > 0 ? 'text-primary' : 'text-danger')}>{repos.length}</span> Records Found</div>
-
-                <ul className="list-group">
-                    {repos.map(repo => (
-                        <li className="list-group-item" key={repo.id}>
-                            <div className="dec-repo-item-grid">
+            <div className="dec-repo-item-grid">
+                <div>
+                    <span className={'fs-5 ' + (repos.length > 0 ? 'text-primary' : 'text-danger')}>{repos.length}</span> Records Found
+                </div>
+                {repos.length>0 &&
+                <div>
+                    <h6>Contributors</h6>
+                </div>
+                }
+            </div>
+            <ul className="list-group">
+                {repos.map(repo => (
+                    <li className="list-group-item" key={repo.id}>
+                        <div className="dec-repo-item-grid">
+                            <div>
                                 <div>
-                                    <div>
-                                        <a className="text-decoration-none blockquote text-capitalize mr-2" href={repo.html_url}>{repo.name}</a>
-                                        <div class="m-2 badge rounded-pill bg-secondary">{repo.language}</div>
-                                    </div>
-
-                                    <div>
-                                        <small>{repo.description}</small>
-                                    </div>
+                                    <a className="text-decoration-none blockquote text-capitalize mr-2" href={repo.html_url}>{repo.name}</a>
+                                    <div class="m-2 badge rounded-pill bg-secondary">{repo.language}</div>
                                 </div>
+
                                 <div>
-                                    <ContributorsViewer contributorsUrl={repo.contributors_url}></ContributorsViewer>
+                                    <small>{repo.description}</small>
                                 </div>
                             </div>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+                            <div>
+                                <ContributorsViewer contributorsUrl={repo.contributors_url}></ContributorsViewer>
+                            </div>
+                        </div>
+                    </li>
+                ))}
+            </ul>
         </div>
     )
 }

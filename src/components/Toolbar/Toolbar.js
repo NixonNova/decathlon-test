@@ -22,6 +22,7 @@ function Toolbar(props) {
     return (
         <div className="dec-toolbar-grid">
             <div>
+                Filter:
                 <select role="button"
                     value={selectedRepoType}
                     onChange={onRepoTypeChanged}
@@ -32,6 +33,7 @@ function Toolbar(props) {
                 </select>
             </div>
             <div>
+                Sort By:
                 <select role="button"
                     value={selectedSortField}
                     onChange={onSortFieldChanged}
