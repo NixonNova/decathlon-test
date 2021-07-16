@@ -24,7 +24,7 @@ function UserViewer() {
             </div>
             <div>
                 <h4>
-                    {user.name}
+                    {user.name}'s Repositories
                 </h4>
                 <div className="dec-link-grid">
                     <div><FaTwitter size="14" /> <a className="link-primary text-decoration-none" href={"https://twitter.com/" + user.twitter_username}>{user.twitter_username}</a></div>

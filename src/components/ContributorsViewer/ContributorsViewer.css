@@ -1,0 +1,14 @@
+.dec-contributor-avatar{
+  margin:5px;
+}
+
+.dec-user-grid{
+  display:grid;
+  grid-template-columns: 200px auto;
+}
+
+.dec-link-grid{
+  display:grid;
+  row-gap: 5px;
+  grid-template-rows: 3;
+}
