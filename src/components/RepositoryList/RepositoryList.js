@@ -42,7 +42,9 @@ function RepositoryList() {
                 onSortCriteriaChanged={(e) => { onSortCriteriaChanged(e) }}
                 ></Toolbar>
             <div>
-                    <ul className="list-group">
+            <div><span className={'fs-5 ' + (repos.length>0?'text-primary':'text-danger')}>{repos.length}</span> Records Found</div>
+
+                <ul className="list-group">
                         {repos.map(repo => (
                             <li className="list-group-item" key={repo.id}>
                                 <div>
