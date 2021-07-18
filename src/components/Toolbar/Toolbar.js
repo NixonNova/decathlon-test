@@ -1,11 +1,11 @@
-import RepoTypes from '../../constants/repo-types.json'
-import SortFields from '../../constants/sort-fields.json'
+import repoTypes from '../../constants/repo-types.json'
+import sortFields from '../../constants/sort-fields.json'
 import './Toolbar.css'
 import React, { useState } from 'react'
 
 function Toolbar(props) {
-    const [selectedRepoType, setSelectedRepoType] = useState(RepoTypes[0].value)
-    const [selectedSortField, setSelectedSortField] = useState(SortFields[0].value)
+    const [selectedRepoType, setSelectedRepoType] = useState(repoTypes[0].value)
+    const [selectedSortField, setSelectedSortField] = useState(sortFields[0].value)
 
     const onRepoTypeChanged = (e) => {
         const newSelectedRepoType = e.target.value
@@ -27,7 +27,7 @@ function Toolbar(props) {
                     value={selectedRepoType}
                     onChange={onRepoTypeChanged}
                     class="form-select">
-                    {RepoTypes.map(repoType => (
+                    {repoTypes.map(repoType => (
                         <option value={repoType.value}>{repoType.text}</option>
                     ))}
                 </select>
@@ -38,7 +38,7 @@ function Toolbar(props) {
                     value={selectedSortField}
                     onChange={onSortFieldChanged}
                     class="form-select">
-                    {SortFields.map(sortField => (
+                    {sortFields.map(sortField => (
                         <option value={sortField.value}>{sortField.text}</option>
                     ))}
                 </select>

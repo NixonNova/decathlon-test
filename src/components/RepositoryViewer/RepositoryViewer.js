@@ -2,16 +2,17 @@ import 'bootstrap/dist/css/bootstrap.css'
 import './RepositoryViewer.css'
 import Toolbar from '../Toolbar/Toolbar'
 import React, { useState, useEffect } from 'react'
-import RepoTypes from '../../constants/repo-types.json'
-import SortFields from '../../constants/sort-fields.json'
+import repoTypes from '../../constants/repo-types.json'
+import sortFields from '../../constants/sort-fields.json'
+import criteriaQsKeys from '../../constants/criteria-qs-keys.json'
 import endpoints from '../../constants/endpoints.json'
 import axios from 'axios'
 import ContributorsViewer from '../ContributorsViewer/ContributorsViewer'
 
 function RepositoryViewer() {
     const [repos, setRepositories] = useState([])
-    const [filterCriteria, setFilterCriteria] = useState(RepoTypes[0].value)
-    const [sortCriteria, setSortCriteria] = useState(SortFields[0].value)
+    const [filterCriteria, setFilterCriteria] = useState(repoTypes[0].value)
+    const [sortCriteria, setSortCriteria] = useState(sortFields[0].value)
 
     const buildCriteriaQs = (key, value) => {
         return '&'.concat(key).concat('=').concat(value)
@@ -19,10 +20,10 @@ function RepositoryViewer() {
 
     useEffect(() => {
         const criteriaQs = '?q='
-            .concat(buildCriteriaQs('type', filterCriteria))
-            .concat(buildCriteriaQs('sort', sortCriteria))
-        const getRepos = axios.get(endpoints.repositories.list.concat(criteriaQs))
-
+            .concat(buildCriteriaQs(criteriaQsKeys.type, filterCriteria))
+            .concat(buildCriteriaQs(criteriaQsKeys.sort, sortCriteria))
+            const getRepos = axios.get(endpoints.repositories.list.concat(criteriaQs))
+ 
         getRepos
             .then(response => {
                 setRepositories(response.data)
