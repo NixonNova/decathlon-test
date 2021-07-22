@@ -9,6 +9,6 @@ test('should render UserViewer correctly', ()=>{
 })
 
 test ('matches snapshot', ()=>{
-const tree = renderer.create(<UserViewer />).toJSON()
-expect(tree).toMatchSnapshot()
+    const tree = renderer.create(<UserViewer />).toJSON()
+    expect(tree).toMatchSnapshot()
 })

@@ -23,9 +23,9 @@ function UserViewer() {
                 <img className="dec-avatar" src={user.avatar_url} alt="Avatar" width="150" height="150" />
             </div>
             <div>
-                <h3 data-testid="user-header">
+                <h4 data-testid="user-header">
                     {user.name}'s Repositories
-                </h3>
+                </h4>
                 <div className="dec-link-grid">
                     <div><FaTwitter size="14" /> <a className="link-primary text-decoration-none" href={"https://twitter.com/" + user.twitter_username}>{user.twitter_username}</a></div>
                     <div><FaEnvelope size="14" /> <a className="link-primary text-decoration-none" href={"mailto: " + user.email}>{user.email}</a></div>
